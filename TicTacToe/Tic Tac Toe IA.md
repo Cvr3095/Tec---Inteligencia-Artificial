@@ -10,3 +10,4 @@ def display_board(b):
     print("\t_|_|_")
     print("\t{0}|{1}|{2}".format(b[6], b[7], b[8]))
     
+    
