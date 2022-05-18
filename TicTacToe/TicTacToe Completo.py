@@ -5,26 +5,20 @@ def display_board(b):
     print("\t_|_|_")
     print("\t{0}|{1}|{2}".format(b[6], b[7], b[8]))
 
-
 def legal_moves(board):
-    """ Lugares que se puede elegir en el tablero """
     moves = []
     for i in range(9):
         if board[i] in list("012345678"):
             moves.append(i)
     return moves
 
-
 def get_player_move(board):
-    """ Pregunte y asegúrese de que el jugador elija la posición para colocar, y repita la consulta """
     move = 9  # El valor inicial 9 es el mensaje de error
     while move not in legal_moves(board):
         move = int(input("Elija la posición de ubicación (0-8)"))
     return move
 
-
-def get_computer_move(board, computer_letter, player_letter):
-   
+def get_computer_move(board, computer_letter, player_letter): 
     board_copy = board.copy()  # Copia el tablero de ajedrez sin afectar al original
     # Regla 1: Determine si se puede ganar una posición, luego elija esa posición
     for move in legal_moves(board_copy):
@@ -45,9 +39,7 @@ def get_computer_move(board, computer_letter, player_letter):
         if move in legal_moves(board):
             return move
 
-
-def is_winner(board, letter):
-    
+def is_winner(board, letter):   
     ways_to_win = {(0, 1, 2), (3, 4, 5), (6, 7, 8), (0, 3, 6),
                    (1, 4, 7), (2, 5, 8), (0, 4, 8), (2, 4, 6)}
     for r in ways_to_win:
@@ -55,17 +47,13 @@ def is_winner(board, letter):
             return True
     return False
 
-
 def is_tie(board):
-
     for i in list("012345678"):
         if i in board:
             return False
     return True
 
-
 def tic_tac_toe():
-
     board = list("012345678")
     # Pídale al jugador que elija una pieza: la pieza X se mueve primero, la pieza O se mueve después
     player_letter = input("Elige la figura que quieres X o 0 (X va primero, O va después):")
@@ -104,7 +92,6 @@ def tic_tac_toe():
             display_board(board)
             print("¡Empate!")
             break
-
 
 if __name__ == '__main__':
     tic_tac_toe()
