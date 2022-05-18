@@ -1,3 +1,6 @@
+### Juego de Tic Tac Toe  con IA
+
+
 def display_board(b):
     """Tablero de visualización"""
     print("\t{0}|{1}|{2}".format(b[0], b[1], b[2]))
