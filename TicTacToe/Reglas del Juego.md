@@ -10,7 +10,8 @@
 
     for move in legal_moves(board_copy):
         board_copy[move] = computer_letter
-        if is_winner(board_copy, computer_letter):  # Determina si gana la IA
+   ### Determina si gana la IA
+        if is_winner(board_copy, computer_letter):  
             return move
         board_copy[move] = str(move)
  
@@ -18,7 +19,8 @@
 
     for move in legal_moves(board_copy):
         board_copy[move] = player_letter
-        if is_winner(board_copy, player_letter): # Determina si gana el jugador
+   ### Determina si gana el jugador
+        if is_winner(board_copy, player_letter): 
             return move
         board_copy[move] = str(move)
 
